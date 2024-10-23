@@ -4,10 +4,10 @@ def get_users():
     return session.query(User).all()
 
 def get_user(user_id):
-    return session.query(User).filter(User.id == user_id).first()
+    return session.query(User).filter(User.user_id == user_id).first()
 
-def add_user(username, password):
-    new_user = User(username=username, password=password)
+def add_user(email, password):
+    new_user = User(email=email, password=password)
     session.add(new_user)
     session.commit()
     return new_user

@@ -1,0 +1,12 @@
+###
+GET http://127.0.0.1:5000/api/users
+
+
+###
+POST http://127.0.0.1:5000/api/users
+Authorization: Bearer
+Content-Type: application/json
+{  
+    "email": "junrybuenavista@yahoo.com",
+    "password": "Junry1231"
+}

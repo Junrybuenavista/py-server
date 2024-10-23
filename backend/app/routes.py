@@ -6,20 +6,20 @@ api_blueprint = Blueprint('api', __name__)
 @api_blueprint.route('/users', methods=['GET'])
 def fetch_users():
     users = get_users()
-    return jsonify([{"id": user.id, "username": user.username} for user in users])
+    return jsonify([{"id": user.user_id, "username": user.email} for user in users])
 
 @api_blueprint.route('/users/<int:user_id>', methods=['GET'])
 def fetch_user(user_id):
     user = get_user(user_id)
     if user:
-        return jsonify({"id": user.id, "username": user.username})
+        return jsonify({"user_id": user.user_id, "email": user.email})
     return jsonify({"error": "User not found"}), 404
 
 @api_blueprint.route('/users', methods=['POST'])
 def create_user():
     data = request.json
-    user = add_user(data['username'], data['password'])
-    return jsonify({"id": user.id, "username": user.username}), 201
+    user = add_user(data['email'], data['password'])
+    return jsonify({"id": user.user_id, "email": user.email}), 201
 
 @api_blueprint.route('/users/<int:user_id>', methods=['PUT'])
 def modify_user(user_id):

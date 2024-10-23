@@ -3,4 +3,3 @@ pg8000
 python-dotenv
 psycopg2-binary
 sqlalchemy
-test
