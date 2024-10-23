@@ -1,0 +1,5 @@
+Flask
+pg8000
+python-dotenv
+sqlalchemy
+psycopg2-binary
