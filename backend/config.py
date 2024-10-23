@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://postgres:1234@localhost:5432/postgres")
+    DATABASE_URL = os.getenv("DATABASE_URL", "")
 
     # Other configuration settings
     DEBUG = os.getenv("DEBUG", "True") == "True"
